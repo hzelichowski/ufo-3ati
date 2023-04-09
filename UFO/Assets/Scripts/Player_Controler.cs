@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+
 public class Player_Controler : MonoBehaviour
 {
+    
+
     Rigidbody2D rigidbody2D;
     public float speed;
     int Score;
@@ -19,7 +24,7 @@ public class Player_Controler : MonoBehaviour
 
     void Update()
     {
-        if (Score >= 5)
+        if (Score >= 7)
         {
             WinText.gameObject.SetActive(true);
         }
