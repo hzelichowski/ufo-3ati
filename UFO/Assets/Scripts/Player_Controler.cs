@@ -3,23 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
-
 public class Player_Controler : MonoBehaviour
 {
-    
-
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D rb2D;
     public float speed;
     int Score;
     public Text scoreText;
     public Text WinText;
+
     void Start()
     {
-
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        Score = 0;
+        rb2D = GetComponent<Rigidbody2D>();
+        Score = 0;   
     }
 
     void Update()
@@ -35,8 +30,7 @@ public class Player_Controler : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rigidbody2D.AddForce(movement*speed);
-
+        rb2D.AddForce(movement*speed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,11 +45,6 @@ public class Player_Controler : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText.text = $"Score: {Score.ToString()}";
-        if (true)
-        {
-
-        }
-        //winText.gameObject.setActivve(true);
+        scoreText.text = $"<color=white>Score: {Score.ToString()}</color>";
     }
 }
